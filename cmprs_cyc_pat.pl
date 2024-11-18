@@ -7,8 +7,8 @@ use Spreadsheet::XLSX;
 use List::Util qw[min max];
 use Cwd;
 
-sub showUsage {	print colored("Usage:   perl $0 <FILE>\n", 'green'),
-			                  "Example: perl $0 CP_i3c.vec\n"};
+sub showUsage {	print colored("Usage:   perl $0 <PAT_FILE>\n", 'green'),
+			                  "Example: perl $0 CP_i3c.pat\n"};
 
 #========================================================================================================
 # Main Process
