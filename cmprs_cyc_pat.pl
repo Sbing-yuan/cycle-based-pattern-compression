@@ -62,6 +62,21 @@ while (<$fh>) {
         $line_cnt = 1;
     }
 }
+
+$_ = $prev_line;
+if($line_cnt == 1) {
+    $OUT_FILE .= $_;
+    #print "$_";
+}
+else {
+    $head = sprintf "repeat %-6d", $line_cnt;
+    $_ = $prev_line;
+    s/             //g; #remove head space
+    $_ = $head . $_;
+    $OUT_FILE .= $_;
+    #print "$_";
+}
+
 close $fh;
 
 open $fh, ">", $parse_file.".cmprs" or die "Can't create $parse_file.cmprs";
